@@ -44,8 +44,8 @@ pip install pycaw requests spotipy
      }
      ```
    - Asegúrate de que el `REDIRECTURI` coincida con el configurado en la aplicación de Spotify.
-   >[!TIP]
-> REDIRECTURI, recomendado localhost, ejemplo: http://localhost:8000/callback
+   >[!NOTE]
+   > REDIRECTURI, recomendado localhost, ejemplo: http://localhost:8000/callback
 ## Uso
 
 1. Ejecuta el script principal:
