@@ -29,7 +29,6 @@ cd silenciar-spotify
 ```
 pip install pycaw requests spotipy
 ```
->[!NOTE]
 >Se dejó un archivo requirements.cmd que automatiza la instalación de las bibliotecas necesarias para el correcto funcionamiento del proyecto. 
 3. Configura el archivo `config.json` ya incluido en el proyecto. Necesitarás las claves de Spotify para completar este paso:
  
@@ -44,8 +43,8 @@ pip install pycaw requests spotipy
      }
      ```
    - Asegúrate de que el `REDIRECTURI` coincida con el configurado en la aplicación de Spotify.
-   >[!NOTE]
-   > REDIRECTURI, recomendado localhost, ejemplo: http://localhost:8000/callback
+  >[!NOTE]
+  > REDIRECTURI, recomendado localhost, ejemplo: http://localhost:8000/callback
 ## Uso
 
 1. Ejecuta el script principal:
