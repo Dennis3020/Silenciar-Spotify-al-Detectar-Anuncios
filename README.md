@@ -36,7 +36,7 @@ pip install pycaw requests spotipy
    - Regístrate o inicia sesión en el [Panel de Desarrolladores de Spotify](https://developer.spotify.com/dashboard/applications), siempre con la cuenta utilizada en la PC.
    - Crea una nueva aplicación en el panel y copia el `Client ID` y el `Client Secret`.
    - En el archivo `config.json`, reemplaza los valores con tus claves:
-     ```json
+     ```
      {
          "CLIENTID": "tuclientid",
          "CLIENTSECRET": "tuclientsecret",
@@ -44,7 +44,7 @@ pip install pycaw requests spotipy
      }
      ```
    - Asegúrate de que el `REDIRECTURI` coincida con el configurado en la aplicación de Spotify.
-   >[!TIP]
+   >[!NOTE]
    > REDIRECTURI, recomendado localhost, ejemplo: http://localhost:8000/callback
 
 ## Uso
