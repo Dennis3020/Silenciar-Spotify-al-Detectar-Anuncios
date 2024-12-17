@@ -29,6 +29,7 @@ cd silenciar-spotify
 ```
 pip install pycaw requests spotipy
 ```
+>[!NOTE]
 >Se dejó un archivo requirements.cmd que automatiza la instalación de las bibliotecas necesarias para el correcto funcionamiento del proyecto. 
 3. Configura el archivo `config.json` ya incluido en el proyecto. Necesitarás las claves de Spotify para completar este paso:
  
