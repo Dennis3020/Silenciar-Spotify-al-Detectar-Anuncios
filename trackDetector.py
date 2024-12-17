@@ -1,12 +1,10 @@
-import os
-
 import requests
 
 import json
 
 from spotipy import Spotify
 
-from spotipy.oauth2 import SpotifyOAuth
+from spotipy.oauth2 import SpotifyOAuth, SpotifyOauthError
 
 from adSilencer import mutearSpotify
 
@@ -37,7 +35,6 @@ def obtenerCancionActual():
     el usuario está reproduciendo actualmente. Retorna un diccionario con los detalles de la canción
     si se está reproduciendo un track, o identifica si es un anuncio o si no hay nada en reproducción.
     """
-    #os.system('clear')
     sp = obtenerInfoUsuario()
     try:
         currentUser = sp.current_user_playing_track()
@@ -45,7 +42,10 @@ def obtenerCancionActual():
             return "Error al obtener informacion de la cancion, es probable que no se este reproduciando nada.", 2
     except requests.exceptions.ConnectionError:
         return "Error de conexion."
-    
+    except SpotifyOauthError:
+        return "Error de autenticación:\n las credenciales de cliente son incorrectas o están incompletas.\n Verifica el archivo 'config.json' y asegúrate de que los valores de\n CLIENTID, CLIENTSECRET y REDIRECTURI sean correctos.", 2 
+         
+
     trackType = currentUser["currently_playing_type"]
 
     if(trackType == "track"):
@@ -73,22 +73,20 @@ def ejecutar():
     Monitorea la canción actual y, en función de su estado (normal, anuncio, o error crítico),
     ejecuta acciones específicas como silenciar o detener la ejecución.
     """
-    
+    Funciona=False
     contIntentos = 0
     while True:
         try:
             cancionActual,mute = obtenerCancionActual()
-            if(mute == 0):
-                print(f"""
-                    {cancionActual["name"]}
-                    {cancionActual["link"]}
-                """)
-            elif(mute==2):
+            if(mute==2):
                 print(cancionActual)
                 return
-            else: print(cancionActual)
             mutearSpotify(mute)
             time.sleep(4)
+            if not Funciona:
+                print("El programa esta funcionando correctamente.")
+                Funciona = True  
+
         except KeyError:
             contIntentos+=1
             if(contIntentos == 10):
