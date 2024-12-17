@@ -57,10 +57,11 @@ python main.py
 2. Sigue las instrucciones en pantalla. Se abrirá una página en Spotify donde deberás autenticarte y validar el uso del programa.
 
 3. Deja que el programa se ejecute en segundo plano mientras usas Spotify. El audio se silenciará automáticamente durante los anuncios.
+   
+>[!TIP]
+>Se incluyó un archivo programa.cmd que permite ejecutar el programa de manera más eficiente y simplificada, facilitando su uso sin necesidad de interactuar directamente con la línea de comandos de Python.
 
 ## Personalización
 Puedes ajustar ciertos parámetros, como los intervalos de verificación de anuncios, modificando las configuraciones en el código fuente o en el archivo `config.json`.
->[!TIP]
->Se incluyó un archivo programa.cmd que permite ejecutar el programa de manera más eficiente y simplificada, facilitando su uso sin necesidad de interactuar directamente con la línea de comandos de Python.
 
 **Nota:** Este proyecto es únicamente con fines educativos y no está afiliado a Spotify.
